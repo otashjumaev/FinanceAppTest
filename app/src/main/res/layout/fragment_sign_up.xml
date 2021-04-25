@@ -78,7 +78,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/InputField"
-            android:hint="Parol"
+            android:hint="Password"
             app:helperText="Reenter your password">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -111,7 +111,7 @@
 
             <TextView
                 style="@style/Text.Black"
-                android:text="Akkauntingiz bormi?" />
+                android:text="Already have account?" />
 
             <TextView
                 android:id="@+id/signInBtn"
