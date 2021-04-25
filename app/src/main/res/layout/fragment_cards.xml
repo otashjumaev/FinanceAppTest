@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baseWhite"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:ignore="SpUsage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="fill"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@id/listCards"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                style="@style/Text.Black"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Cards"
+                android:textSize="30sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:descendantFocusability="blocksDescendants"
+                android:foreground="?selectableItemBackground"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_icon_more" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/sendToText"
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            tools:listitem="@layout/list_item_card" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:progress="67"
+            app:indicatorColor="#4044FC"
+            app:layout_constraintBottom_toTopOf="@id/downBtn"
+            app:layout_constraintTop_toBottomOf="@id/remAmountText"
+            app:trackColor="#E6E9FF"
+            app:trackCornerRadius="5dp"
+            app:trackThickness="7dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remAmountText"
+            style="@style/Text.Black.Bold"
+            android:layout_width="0dp"
+            android:layout_marginTop="15dp"
+            android:text="Reamining amount"
+            app:layout_constraintBottom_toTopOf="@id/progressIndicator"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listCards" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/progressIndicatorText"
+            style="@style/Text.Black.Bold"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="67%"
+            android:textColor="@color/btnPressedTextColor"
+            app:layout_constraintBottom_toBottomOf="@id/remAmountText"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/remAmountText" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/upBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_arrow_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/downBtn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/downBtn"
+            app:srcCompat="@drawable/ic_round_keyboard_arrow_up_32"
+            app:tint="@color/btnPressedTextColor" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/downBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_arrow_btn"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@id/sendToText"
+            app:layout_constraintLeft_toRightOf="@id/upBtn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressIndicator"
+            app:srcCompat="@drawable/ic_round_keyboard_arrow_down_32"
+            app:tint="@color/btnPressedTextColor" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sendToText"
+            style="@style/Text.Black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Send money to"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/listContacts"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downBtn" />
+
+        <include
+            android:id="@+id/addContact"
+            layout="@layout/list_item_contact_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/listContacts"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/listContacts"
+            app:layout_constraintTop_toTopOf="@id/listContacts" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listContacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/textTransaction"
+            app:layout_constraintLeft_toRightOf="@id/addContact"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendToText"
+            tools:listitem="@layout/list_item_contact" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTransaction"
+            style="@style/Text.Black"
+            android:layout_width="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Transactions"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/btn1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/viewAllBtn"
+            app:layout_constraintTop_toBottomOf="@id/listContacts" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAllBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View all"
+            app:layout_constraintBottom_toBottomOf="@id/textTransaction"
+            app:layout_constraintLeft_toRightOf="@id/textTransaction"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textTransaction" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn1"
+            style="@style/TextBtn"
+            android:background="@drawable/bg_chip"
+            android:text="Day"
+            app:layout_constraintBottom_toTopOf="@id/listTransact"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn2"
+            app:layout_constraintTop_toBottomOf="@id/textTransaction" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn2"
+            style="@style/TextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            android:textColor="@color/gray"
+            app:layout_constraintLeft_toRightOf="@id/btn1"
+            app:layout_constraintRight_toLeftOf="@id/btn3"
+            app:layout_constraintTop_toTopOf="@id/btn1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn3"
+            style="@style/TextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week"
+            android:textColor="@color/gray"
+            app:layout_constraintLeft_toRightOf="@id/btn2"
+            app:layout_constraintRight_toLeftOf="@id/btn4"
+            app:layout_constraintTop_toTopOf="@id/btn1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn4"
+            style="@style/TextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textColor="@color/gray"
+            app:layout_constraintLeft_toRightOf="@id/btn3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listTransact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn1"
+            tools:itemCount="2"
+            tools:listitem="@layout/list_item_transaction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

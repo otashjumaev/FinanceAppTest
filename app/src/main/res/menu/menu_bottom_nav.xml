@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homePage"
+        android:icon="@drawable/ic_round_home_24"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/cardsPage"
+        android:icon="@drawable/ic_round_account_balance_wallet_24"
+        android:title="Cards"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/placeholder"
+        android:title=""
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/earningsPage"
+        android:icon="@drawable/ic_round_assignment_24"
+        android:title="Earnings"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/profilePage"
+        android:icon="@drawable/ic_round_person_24"
+        android:title="Profile"
+        app:showAsAction="always" />
+</menu>

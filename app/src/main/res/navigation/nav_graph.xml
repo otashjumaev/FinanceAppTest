@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="org.hiro.financeapp.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.hiro.financeapp.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="org.hiro.financeapp.ui.intro.IntroFragment"
+        android:label="IntroFragment"
+        tools:layout="@layout/fragment_intro" />
+    <fragment
+        android:id="@+id/cardsFragment"
+        android:name="org.hiro.financeapp.ui.CardsFragment"
+        android:label="CardsFragment"
+        tools:layout="@layout/fragment_cards" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="org.hiro.financeapp.ui.intro.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash_screen" />
+    <fragment
+        android:id="@+id/fragmentSignIn"
+        android:name="org.hiro.financeapp.ui.auth.SignInFragment"
+        android:label="FragmentSignIn"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/fragmentSignUp"
+        android:name="org.hiro.financeapp.ui.auth.SignUpFragment"
+        android:label="FragmentSignUp"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/earningsFragment"
+        android:name="org.hiro.financeapp.ui.EarningsFragment"
+        android:label="EarningsFragment"
+        tools:layout="@layout/fragment_earning" />
+</navigation>

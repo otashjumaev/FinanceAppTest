@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FinanceApp</string>
+    <string name="next">Next</string>
+    <string name="intro_title_1">Easily Transfer Money Instantly</string>
+    <string name="intro_title_2">256 Bit Military Grade Security</string>
+    <string name="intro_title_3">Advanced Analytics</string>
+    <string name="intro_sub_text">NetsPay helps you transfer money instantly to anyone over 100+ countries</string>
+    <string name="get_started">Get Started</string>
+</resources>

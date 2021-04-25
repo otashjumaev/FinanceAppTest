@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baseWhite"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:ignore="SpUsage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="fill"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@id/nameText"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Text.Black"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Dashboard"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/profilPic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/profile_pic" />
+
+            <ImageView
+                android:id="@+id/buttonBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:descendantFocusability="blocksDescendants"
+                android:foreground="?selectableItemBackground"
+                android:padding="15dp"
+                android:src="@drawable/ic_icon_more" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/welcomeText"
+            style="@style/Text.Black"
+            android:text="Welcome,"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/nameText"
+            app:layout_constraintLeft_toLeftOf="@id/nameText"
+            app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameText"
+            style="@style/Text.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Samuel Fletcher"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/list1"
+            app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+
+        <View
+            android:id="@+id/lineDash"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_dash_line"
+            app:layout_constraintTop_toBottomOf="@id/nameText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/textTransaction"
+            app:layout_constraintTop_toBottomOf="@id/lineDash"
+            tools:listitem="@layout/list_item_category" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTransaction"
+            style="@style/Text.Black.Bold"
+            android:layout_width="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Transactions"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/btn1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/viewAllBtn"
+            app:layout_constraintTop_toBottomOf="@id/list1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAllBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="View all"
+            app:layout_constraintBottom_toBottomOf="@id/textTransaction"
+            app:layout_constraintLeft_toRightOf="@id/textTransaction"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textTransaction" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn1"
+            style="@style/TextBtn"
+            android:background="@drawable/bg_chip"
+            android:text="Day"
+            app:layout_constraintBottom_toTopOf="@id/listTransact"
+            app:layout_constraintLeft_toLeftOf="@id/textTransaction"
+            app:layout_constraintRight_toLeftOf="@id/btn2"
+            app:layout_constraintTop_toBottomOf="@id/textTransaction" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn2"
+            style="@style/TextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            android:textColor="@color/gray"
+            app:layout_constraintLeft_toRightOf="@id/btn1"
+            app:layout_constraintRight_toLeftOf="@id/btn3"
+            app:layout_constraintTop_toTopOf="@id/btn1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn3"
+            style="@style/TextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week"
+            android:textColor="@color/gray"
+            app:layout_constraintLeft_toRightOf="@id/btn2"
+            app:layout_constraintRight_toLeftOf="@id/btn4"
+            app:layout_constraintTop_toTopOf="@id/btn1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn4"
+            style="@style/TextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textColor="@color/gray"
+            app:layout_constraintLeft_toRightOf="@id/btn3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listTransact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn1"
+            tools:itemCount="2"
+            tools:listitem="@layout/list_item_transaction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextBtn">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingEnd">25dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/btnPressedTextColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="Button_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_arrow_btn</item>
+        <item name="android:padding">2dp</item>
+        <item name="tint">@color/btnPressedTextColor</item>
+    </style>
+
+    <style name="InputField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:theme">@style/TextLabel</item>
+    </style>
+</resources>
