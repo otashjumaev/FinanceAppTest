@@ -41,10 +41,6 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
         val email = binding.loginEditText.text.toString()
         val password = binding.passwordEditText.text.toString()
         if (email.isNotBlank() && password.isNotBlank()) {
-            if (!checkEmail()) {
-                binding.loginEditText.error = "Wrong formatted email"
-                return
-            }
             if (password.length < 6) {
                 binding.passwordEditText.error = "Password length should be more than 6 characters"
                 return
@@ -59,9 +55,6 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
         }
     }
 
-    private fun checkEmail() =
-        binding.loginEditText.text.toString()
-            .matches(Regex("^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}\$"))
 
     private fun signInUser(email: String, password: String) {
         if (viewModel.checkUser(email, password)) {
